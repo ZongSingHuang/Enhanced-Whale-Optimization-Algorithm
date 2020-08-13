@@ -5,7 +5,7 @@ Created on Thu Jul 16 21:43:03 2020
 @author: ZongSing_NB
 """
 
-from WOA import WOA
+from EWOA import EWOA
 import numpy as np
 import time
 import pandas as pd
@@ -95,14 +95,14 @@ d = 30
 g = 3000
 p = 20
 times = 30
-update_with_iteration = False
+update_with_iteration = True
 table = np.zeros((4, 11))
 table[2, :] = -np.ones(11)*np.inf
 table[3, :] = np.ones(11)*np.inf
 for i in range(times):
     x_max = 100*np.ones(d)
     x_min = -100*np.ones(d)
-    optimizer = WOA(fit_func=Sphere, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Sphere, update_with_iteration=update_with_iteration, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -115,7 +115,7 @@ for i in range(times):
 
     x_max = 10*np.ones(d)
     x_min = -10*np.ones(d)
-    optimizer = WOA(fit_func=Schwefel_P222, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Schwefel_P222, update_with_iteration=update_with_iteration, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -128,7 +128,7 @@ for i in range(times):
     
     x_max = 100*np.ones(d)
     x_min = -100*np.ones(d)
-    optimizer = WOA(fit_func=Quadric, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Quadric, update_with_iteration=update_with_iteration, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -141,7 +141,7 @@ for i in range(times):
  
     x_max = 10*np.ones(d)
     x_min = -10*np.ones(d)
-    optimizer = WOA(fit_func=Rosenbrock, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Rosenbrock, update_with_iteration=update_with_iteration, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -154,7 +154,7 @@ for i in range(times):
    
     x_max = 100*np.ones(d)
     x_min = -100*np.ones(d)
-    optimizer = WOA(fit_func=Step, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Step, update_with_iteration=update_with_iteration, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -167,7 +167,7 @@ for i in range(times):
   
     x_max = 1.28*np.ones(d)
     x_min = -1.28*np.ones(d)
-    optimizer = WOA(fit_func=Quadric_Noise, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Quadric_Noise, update_with_iteration=update_with_iteration, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -180,7 +180,7 @@ for i in range(times):
  
     x_max = 500*np.ones(d)
     x_min = -500*np.ones(d)
-    optimizer = WOA(fit_func=Schwefel, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Schwefel, update_with_iteration=update_with_iteration, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -193,7 +193,7 @@ for i in range(times):
 
     x_max = 5.12*np.ones(d)
     x_min = -5.12*np.ones(d)
-    optimizer = WOA(fit_func=Rastrigin, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Rastrigin, update_with_iteration=update_with_iteration, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -206,7 +206,7 @@ for i in range(times):
 
     x_max = 5.12*np.ones(d)
     x_min = -5.12*np.ones(d)
-    optimizer = WOA(fit_func=Noncontinuous_Rastrigin, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Noncontinuous_Rastrigin, update_with_iteration=update_with_iteration, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -219,7 +219,7 @@ for i in range(times):
  
     x_max = 32*np.ones(d)
     x_min = -32*np.ones(d)
-    optimizer = WOA(fit_func=Ackley, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Ackley, update_with_iteration=update_with_iteration, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -232,7 +232,7 @@ for i in range(times):
  
     x_max = 600*np.ones(d)
     x_min = -600*np.ones(d)
-    optimizer = WOA(fit_func=Griewank, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Griewank, update_with_iteration=update_with_iteration, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()

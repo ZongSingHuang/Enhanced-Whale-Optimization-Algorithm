@@ -10,7 +10,7 @@ Main reference:http://www.alimirjalili.com/WOA.html
 import numpy as np
 import matplotlib.pyplot as plt
 
-class WOA():
+class EWOA():
     def __init__(self, fit_func, update_with_iteration=True, num_dim=30, num_particle=20, max_iter=500, 
                  b=1, x_max=1, x_min=0, a_max=2, a_min=0, l_max=1, l_min=-1, a2_max=-1, a2_min=-2):
         self.fit_func = fit_func        
