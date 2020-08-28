@@ -63,7 +63,7 @@ class EWOA():
                 else:
                     # (4)
                     D = C*self.gBest_X - self.X[i, :]
-                    self.X[i, :] = D*np.cos(2*np.pi*l)+self.gBest_X  
+                    self.X[i, :] = self.gBest_X  - D*np.cos(2*np.pi*l) 
             # case2-2. 每跑完一條就更新一次gBest
                 if self.update_with_iteration==False:
                     self.X[i, self.x_max < self.X[i, :]] = self.x_max[self.x_max < self.X[i, :]]
