@@ -335,7 +335,6 @@ d = 30
 g = 500
 p = 30
 times = 50
-update_with_iteration = True
 table = np.zeros((5, 23)) # ['avg', 'time', 'worst', 'best', 'std']
 table[2, :] = -np.ones(23)*np.inf # worst
 table[3, :] = np.ones(23)*np.inf # best
@@ -344,7 +343,7 @@ all_for_loss = np.zeros((g, 23))
 for i in range(times):
     x_max = 100*np.ones(d)
     x_min = -100*np.ones(d)
-    optimizer = EWOA(fit_func=Sphere, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Sphere, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -356,9 +355,10 @@ for i in range(times):
     all_for_std[i, 0] = optimizer.gBest_score
     all_for_loss[:, 0] += optimizer.gBest_curve
 
+
     x_max = 10*np.ones(d)
     x_min = -10*np.ones(d)
-    optimizer = EWOA(fit_func=Schwefel_P222, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Schwefel_P222, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -373,7 +373,7 @@ for i in range(times):
     
     x_max = 100*np.ones(d)
     x_min = -100*np.ones(d)
-    optimizer = EWOA(fit_func=Quadric, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Quadric, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -385,9 +385,10 @@ for i in range(times):
     all_for_std[i, 2] = optimizer.gBest_score
     all_for_loss[:, 2] += optimizer.gBest_curve
 
+
     x_max = 100*np.ones(d)
     x_min = -100*np.ones(d)
-    optimizer = EWOA(fit_func=Schwefel_P221, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Schwefel_P221, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -399,9 +400,10 @@ for i in range(times):
     all_for_std[i, 3] = optimizer.gBest_score
     all_for_loss[:, 3] += optimizer.gBest_curve
  
+    
     x_max = 30*np.ones(d)
     x_min = -30*np.ones(d)
-    optimizer = EWOA(fit_func=Rosenbrock, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Rosenbrock, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -416,7 +418,7 @@ for i in range(times):
    
     x_max = 100*np.ones(d)
     x_min = -100*np.ones(d)
-    optimizer = EWOA(fit_func=Step, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Step, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -431,7 +433,7 @@ for i in range(times):
   
     x_max = 1.28*np.ones(d)
     x_min = -1.28*np.ones(d)
-    optimizer = EWOA(fit_func=Quadric_Noise, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Quadric_Noise, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -446,7 +448,7 @@ for i in range(times):
  
     x_max = 500*np.ones(d)
     x_min = -500*np.ones(d)
-    optimizer = EWOA(fit_func=Schwefel, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Schwefel, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -461,7 +463,7 @@ for i in range(times):
 
     x_max = 5.12*np.ones(d)
     x_min = -5.12*np.ones(d)
-    optimizer = EWOA(fit_func=Rastrigin, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Rastrigin, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -473,9 +475,10 @@ for i in range(times):
     all_for_std[i, 8] = optimizer.gBest_score
     all_for_loss[:, 8] += optimizer.gBest_curve 
  
+    
     x_max = 32*np.ones(d)
     x_min = -32*np.ones(d)
-    optimizer = EWOA(fit_func=Ackley, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Ackley, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -490,7 +493,7 @@ for i in range(times):
  
     x_max = 600*np.ones(d)
     x_min = -600*np.ones(d)
-    optimizer = EWOA(fit_func=Griewank, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Griewank, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -502,9 +505,10 @@ for i in range(times):
     all_for_std[i, 10] = optimizer.gBest_score
     all_for_loss[:, 10] += optimizer.gBest_curve
 
+
     x_max = 50*np.ones(d)
     x_min = -50*np.ones(d)
-    optimizer = EWOA(fit_func=Generalized_Penalized01, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Generalized_Penalized01, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -516,9 +520,10 @@ for i in range(times):
     all_for_std[i, 11] = optimizer.gBest_score
     all_for_loss[:, 11] += optimizer.gBest_curve
     
+    
     x_max = 50*np.ones(d)
     x_min = -50*np.ones(d)
-    optimizer = EWOA(fit_func=Generalized_Penalized02, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Generalized_Penalized02, 
                     num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -530,9 +535,10 @@ for i in range(times):
     all_for_std[i, 12] = optimizer.gBest_score
     all_for_loss[:, 12] += optimizer.gBest_curve
     
+    
     x_max = 65.536*np.ones(2)
     x_min = -65.536*np.ones(2)
-    optimizer = EWOA(fit_func=DE_JONG_N5, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=DE_JONG_N5, 
                     num_dim=2, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -544,9 +550,10 @@ for i in range(times):
     all_for_std[i, 13] = optimizer.gBest_score
     all_for_loss[:, 13] += optimizer.gBest_curve
     
+    
     x_max = 5*np.ones(4)
     x_min = -5*np.ones(4)
-    optimizer = EWOA(fit_func=Kowalik, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Kowalik, 
                     num_dim=4, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -558,9 +565,10 @@ for i in range(times):
     all_for_std[i, 14] = optimizer.gBest_score
     all_for_loss[:, 14] += optimizer.gBest_curve
     
+    
     x_max = 5*np.ones(2)
     x_min = -5*np.ones(2)
-    optimizer = EWOA(fit_func=Six_Hump_Camel, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Six_Hump_Camel, 
                     num_dim=2, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -572,9 +580,10 @@ for i in range(times):
     all_for_std[i, 15] = optimizer.gBest_score
     all_for_loss[:, 15] += optimizer.gBest_curve
     
+    
     x_max = 5*np.ones(2)
     x_min = -5*np.ones(2)
-    optimizer = EWOA(fit_func=Brain, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Brain, 
                     num_dim=2, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -586,9 +595,10 @@ for i in range(times):
     all_for_std[i, 16] = optimizer.gBest_score
     all_for_loss[:, 16] += optimizer.gBest_curve
     
+    
     x_max = 2*np.ones(2)
     x_min = -2*np.ones(2)
-    optimizer = EWOA(fit_func=Goldstein_Price, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Goldstein_Price, 
                     num_dim=2, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -600,9 +610,10 @@ for i in range(times):
     all_for_std[i, 17] = optimizer.gBest_score
     all_for_loss[:, 17] += optimizer.gBest_curve
     
+    
     x_max = 1*np.ones(3)
     x_min = 0*np.ones(3)
-    optimizer = EWOA(fit_func=Hartmann_3D, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Hartmann_3D, 
                     num_dim=3, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -614,9 +625,10 @@ for i in range(times):
     all_for_std[i, 18] = optimizer.gBest_score
     all_for_loss[:, 18] += optimizer.gBest_curve
     
+    
     x_max = 1*np.ones(6)
     x_min = 0*np.ones(6)
-    optimizer = EWOA(fit_func=Hartmann_6D, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Hartmann_6D, 
                     num_dim=6, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -628,9 +640,10 @@ for i in range(times):
     all_for_std[i, 19] = optimizer.gBest_score
     all_for_loss[:, 19] += optimizer.gBest_curve
     
+    
     x_max = 10*np.ones(4)
     x_min = 0*np.ones(4)
-    optimizer = EWOA(fit_func=Shekel_m5, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Shekel_m5, 
                     num_dim=4, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -642,9 +655,10 @@ for i in range(times):
     all_for_std[i, 20] = optimizer.gBest_score
     all_for_loss[:, 20] += optimizer.gBest_curve
     
+    
     x_max = 10*np.ones(4)
     x_min = 0*np.ones(4)
-    optimizer = EWOA(fit_func=Shekel_m7, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Shekel_m7, 
                     num_dim=4, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
@@ -656,9 +670,10 @@ for i in range(times):
     all_for_std[i, 21] = optimizer.gBest_score
     all_for_loss[:, 21] += optimizer.gBest_curve
     
+    
     x_max = 10*np.ones(4)
     x_min = 0*np.ones(4)
-    optimizer = EWOA(fit_func=Shekel_m10, update_with_iteration=update_with_iteration, 
+    optimizer = EWOA(fit_func=Shekel_m10, 
                     num_dim=4, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
