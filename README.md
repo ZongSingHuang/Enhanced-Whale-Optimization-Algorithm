@@ -1,6 +1,7 @@
 # Enhanced-Whale-Optimization-Algorithm
-Qais, M. H., Hasanien, H. M., &amp; Alghuwainem, S. (2019). Enhanced whale optimization algorithm for maximum power point tracking of variable-speed wind generators. Applied Soft Computing, 105937. doi:10.1016/j.asoc.2019.105937 
+M. Qais, H. Hasanien and S. Alghuwainem, "Enhanced whale optimization algorithm for maximum power point tracking of variable-speed wind generators", Applied Soft Computing, vol. 86, p. 105937, 2020.
 
+https://doi.org/10.1016/j.asoc.2019.105937
 
 1. 重新優化了測試腳本
 
